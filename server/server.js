@@ -19,8 +19,13 @@ app.get('/index.css', function (req, res) {
 });
 
 // route test page
-app.get('/test', function(req, res){
-  res.send('on test page');
+app.post('/test', function(req, res){
+  if(req.body) {
+    io.emit('starred', req.body.repository.stargazers_count);
+    console.log(req.body.repository.stargazers_count);
+    console.log('Someone starred your repo');
+  }
+  res.end();
 })
 
 app.post('/payload', function(req, res) {

@@ -93,6 +93,11 @@
     console.log(data);
     socket.emit('my other event', { my: 'data' });
   });
+
+  socket.on('starred', function(data) {
+    console.log('starred', data);
+  });
+
   socket.on('loginClickFelt', function(data){
     console.log(data);
   });
