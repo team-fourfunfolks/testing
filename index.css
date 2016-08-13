@@ -1,0 +1,244 @@
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    height: 90%;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 0;
+    opacity: .5;
+}
+
+a {
+    color: #3897f0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input {
+    clear: both;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    height: 35px;
+    border: 1px solid #ededed;
+    border-radius: 3px;
+    padding-left: 10px;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+input:focus {
+    outline: 0;
+    border: 1px solid #c4c4c4;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.mainContainer {
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+}
+
+/*SHOWCASE CONTAINER*/
+.showcaseImageContainer {
+
+    height: 100%;
+    margin: 0;
+    width: 50%;
+    float: left;
+}
+
+.showcaseImage {
+    background-image: url(https://instagramstatic-a.akamaihd.net/h1/images/homepage/home-phones@2x.png/f82c2ede4ccb.png);
+    background-size: 425px 578px;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 100%;
+    margin-top: 15%;
+    margin-right: 20px;
+    margin-left: auto;
+    padding-top: 1px;
+}
+
+.imageShow {
+    background-image: url(https://instagramstatic-a.akamaihd.net/h1/images/homepage/screenshot5-2x.jpg/9cb9ba2dda6a.jpg);
+    background-size: 227px,400px;
+    height: 401px;
+    width: 227px;
+    margin-top: 91px;
+    margin-left: 140px;
+    overflow: hidden;
+}
+
+
+/*LOGIN AREA*/
+.signInContainer {
+    width: 50%;
+    height: 100%;
+    float: left;
+
+}
+
+.LogInBoxContainer {
+    background-color: #fff;
+    width: 60%;
+    margin-top: 30%;
+    margin-right: auto;
+    clear: both;
+    padding-top: 1px;
+    border: 1px solid #ededed;
+    display: table;
+}
+
+.iGLogo {
+    background-image: url(http://instagramstatic-a.akamaihd.net/h1/sprites/whiteout/829d8b.png);
+    background-repeat: no-repeat;
+    background-position: -475px 0;
+    height: 73px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    clear: both;
+}
+
+.logIn {
+    clear: both;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 80%;
+    background-color: #3897f0;
+    height: 35px;
+    border: 1px solid #ededed;
+    border-radius: 3px;
+}
+
+.failedLogin {
+    height: 35px;
+    color: red;
+    font-size: 14px;
+    font-weight: 300;
+    width: 85%;
+    margin: 25px auto;
+    text-align: center;
+    visibility: hidden;
+}
+
+.SignUpContainer {
+    background-color: #fff;
+    border: 1px solid #ededed;
+    clear: both;
+    height: 55px;
+    width: 60%;
+    margin-top: 15px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.getAppContainer {
+    height: 90px;
+    width: 60%;
+    margin-top: 15px;
+    padding-top: 1px;
+    text-align: center;
+}
+
+.getAppContainer p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.getAppContainer button {
+    border: 0;
+    width: 140px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: 142px 41px;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.appStore {
+    background-image: url(https://instagramstatic-a.akamaihd.net/h1/images/appstore-install-badges/badge_ios_english-en.png/4b70f6fae447.png);
+}
+
+.googlePlay {
+    background-image: url(https://instagramstatic-a.akamaihd.net/h1/images/appstore-install-badges/english_get.png/74c874cf7dc5.png);
+    width: 119px !important;
+    background-size: 120px 41px !important;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    padding-top: 25px;;
+}
+
+footer ul {
+    margin: 0;
+    width: 75%;
+    height: 20px;
+    margin-left: 75px;
+}
+
+footer li {
+    float: left;
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 0;
+    color: #003569;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.copyright {
+    padding-left: 20%;
+    color: #a1a1a1;
+}
+
+/*// media queries*/
+
+
+
+@media (max-width: 780px) {
+    .showcaseImageContainer{
+        display: none;
+    }
+
+    .signInContainer {
+        width: 100%;
+    }
+
+    .LogInBoxContainer, .SignUpContainer, .getAppContainer {
+       margin-left: auto;
+        margin-right: auto;
+    }
+}
