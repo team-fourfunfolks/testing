@@ -9,9 +9,10 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-app.get('/payload', function(req, res) {
-	const push = req.body.read;
-	res.send('Payload page POST method');
+app.post('/payload', function(req, res) {
+	const push = JSON.parse(req.body.read);
+	// res.send('Payload page POST method');
+	console.log("I got some JSON: " + push.inspect);
 });
 
 
