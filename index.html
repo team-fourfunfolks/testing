@@ -88,7 +88,7 @@
 
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script>
-  var socket = io.connect('http://5641dabb.ngrok.io/');
+  var socket = io.connect('http://a57fb35c.ngrok.io/');
   socket.on('news', function (data) {
     console.log(data);
     socket.emit('my other event', { my: 'data' });
@@ -96,6 +96,10 @@
 
   socket.on('starred', function(data) {
     console.log('starred', data);
+  });
+
+  socket.on('push', function(data) {
+    console.log('pushed', data);
   });
 
   socket.on('loginClickFelt', function(data){

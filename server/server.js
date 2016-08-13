@@ -26,7 +26,16 @@ app.post('/test', function(req, res){
     console.log('Someone starred your repo');
   }
   res.end();
-})
+});
+
+app.post('/push', function(req, res){
+  if(req.body) {
+    io.emit('push', req.body.pusher);
+    console.log(req.body.pusher);
+    console.log('Someone pushed');
+  }
+  res.end();
+});
 
 app.post('/payload', function(req, res) {
 	//console.log(req.body.issue.title, req.body.repository.full_name);
