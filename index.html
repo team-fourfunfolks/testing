@@ -88,7 +88,7 @@
 
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script>
-  var socket = io.connect('http://localhost:3000');
+  var socket = io.connect('http://5641dabb.ngrok.io/');
   socket.on('news', function (data) {
     console.log(data);
     socket.emit('my other event', { my: 'data' });
@@ -97,8 +97,8 @@
     console.log(data);
   });
 
-  socket.on('payloadRec', function(){
-    console.log('payloadReceivedFromGitHub');
+  socket.on('payloadRec', function(data){
+    console.log('payloadReceivedFromGitHub', data);
   })
   var buttonToSock = document.getElementById('logInButton');
 
