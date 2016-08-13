@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Login</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+
+    <div class="mainContainer">
+        <div class="showcaseImageContainer">
+            <div class="showcaseImage">
+                <div class="imageShow">
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="signInContainer">
+            <div class="LogInBoxContainer">
+                <div class="iGLogo">
+                </div>
+                <input type="text" class="userName" id="userName" placeholder="UserName" value = ""> <input class=
+                "password" type="password" id="password" placeholder="Password">
+                <button id="logInButton" class="logIn" >Log
+                in</button>
+
+                <p class="failedLogin" id="failedLogin">Sorry, your password
+                was incorrect. Please double-check your password.</p>
+            </div>
+
+
+            <div class="SignUpContainer">
+                Don't have an account? <a href="#">Sign up</a>
+            </div>
+
+
+            <div class="getAppContainer">
+                <p>Get the app.</p>
+                <button class="appStore"></button> <button class=
+                "googlePlay"></button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <ul>
+            <li>ABOUT US</li>
+
+
+            <li>SUPPORT</li>
+
+
+            <li>BLOG</li>
+
+
+            <li>PRESS</li>
+
+
+            <li>API</li>
+
+
+            <li>JOBS</li>
+
+
+            <li>PRIVACY</li>
+
+
+            <li>TERMS</li>
+
+
+            <li>LANGUAGE</li>
+
+
+            <li class="copyright">&copy; 2016 INSTAGRAM</li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script>
+  var socket = io.connect('http://localhost:3000');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+  socket.on('loginClickFelt', function(data){
+    console.log(data);
+  });
+
+  socket.on('payloadRec', function(){
+    console.log('payloadReceivedFromGitHub');
+  })
+  var buttonToSock = document.getElementById('logInButton');
+
+  buttonToSock.onclick = function(){
+    console.log('clicked');
+    socket.emit('abc');
+  };
+</script>

@@ -1,22 +1,44 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
 
-app.use(bodyParser.json());
+var app = require('express')();
+var http = require('http');
+var server = http.Server(app);
+var io = require('socket.io')(server);
+var path = require('path');
 
+server.listen(3000);
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
+app.get('/index.css', function (req, res) {
+  res.sendFile(path.join(__dirname, '../index.css'));
+});
+
+// route test page 
+app.get('/test', function(req, res){
+  res.send('on test page');
+})
+
 app.post('/payload', function(req, res) {
-	//const push = JSON.parse(req.body.read);
-	// res.send('Payload page POST method');
-	console.log("I got some JSON: ");
+  io.emit('payloadRec', {hello: 'payload'});
+	console.log("I got a Payload from your Github Webhook");
   res.end();
 });
 
 
-app.listen(4567, function () {
-  console.log('Example app listening on port 4567!');
+
+//#######   socket handling   ############
+var users = 0;
+io.on('connection', function (socket) {
+  users++;
+  console.log(users + ' connected with socket');
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log('my other event triggered');
+  });
+  socket.on('disconnect', function(){
+    users--;
+    console.log('disconnect felt \n');
+  });
 });
