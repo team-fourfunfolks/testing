@@ -10,9 +10,10 @@ app.get('/', function (req, res) {
 });
 
 app.post('/payload', function(req, res) {
-	const push = JSON.parse(req.body.read);
+	//const push = JSON.parse(req.body.read);
 	// res.send('Payload page POST method');
-	console.log("I got some JSON: " + push.inspect);
+	console.log("I got some JSON: ");
+  res.end();
 });
 
 
